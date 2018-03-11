@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Postal Calculator</title>
+		<% include ../partials/header.ejs %>
+	</head>
+	<body>
+		<h1 id="postalHeader">Postal Calculator</h1>
+		<h2 id"Letter (Stamped)>
+		<form method="post" action="/getRate">
+			<table id="userTable">
+				<tr>
+					<td>Weight</td>
+					<td><input name="weights" type="number" step="0.1" value="0.0"/></td>
+				</tr>
+				<tr>
+					<select name="type">
+						<option value="stamped">"Letter(Stamped)"</option>
+						<option value="metered">"Letter(Metered)"</option>
+						<option value="flats">"Large Envelopes(Flats)"</option>
+						<option value="first_class">"First-Class Package Service—Retail"</option>
+					</select>
+				</tr>
+					
+			</table>
+			<input type="submit" name="submit" value="submit"/>
+		</form>
+	</body>
+</html>
