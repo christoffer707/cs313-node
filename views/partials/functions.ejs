@@ -1,0 +1,141 @@
+<% 
+			packageType=function(input, weights){
+				console.log(input);
+				var price = 0;
+				switch(input){
+					case "stamped":
+						price = stamped(weights);
+					break;
+					case "metered":
+						price = metered(weights);
+					break;
+					case "flats":
+						price = flats(weights);
+					break;
+					case "first_class":
+						price = first_class(weights);
+					break;
+				}
+				return price;
+			}
+			stamped=function(weights){
+				var price = 0;
+				var count = 0;
+				if (weights <= 1){
+					price = 0.50;
+				}
+				else if (weights > 1 && weights <= 2){	
+					price = 0.71;
+				}
+				else if (weights > 2 && weights <= 3){
+					price = 0.92;
+				}
+				else if (weights > 3 && weights <= 3.5){
+					price = 1.13;
+				}
+				else{price = "";}
+				return price;
+			
+			}
+			metered=function(weights){
+				var price = 0;
+				if (weights <= 1){
+					price = .47;	
+				}
+				else if (weights > 1 && weights <= 2){	
+					price = 0.68;
+				}
+				else if (weights > 2 && weights <= 3){
+					price = 0.89;
+				}
+				else if (weights > 3 && weights <= 3.5){
+					price = 1.10;
+				}
+				else{
+					price = "";
+				}
+				return price;
+			}
+			
+			flats=function(weights){
+				var price = 0;
+				if (weights <= 1){
+					price = 1.00;
+					}
+				else if (weights > 1 && weights < 2){
+					price = 1.21;
+				}
+				else if (weights > 2 && weights < 3){
+					price = 1.42;
+				}
+				else if (weights > 3 && weights < 4){
+					price = 1.63;
+				}
+				else if (weights > 4 && weights < 5){
+					price = 1.84;
+				}
+				else if (weights > 5 && weights < 6){
+					price = 2.05;
+				}
+				else if (weights > 6 && weights < 7){
+					price = 2.26;
+				}
+				else if (weights > 7 && weights < 8){
+					price = 2.47;
+				}
+				else if (weights > 8 && weights < 9){
+					price = 2.68;
+				}
+				else if (weights > 9 && weights < 10){
+					price = 2.89;
+				}
+				else if (weights > 10 && weights < 11){
+					price = 3.10;
+				}
+				else if (weights > 11 && weights < 12){
+					price = 3.31;
+				}
+				else if (weights > 12 && weights < 13){
+					price = 3.52;
+				}
+				else {
+					price = "";
+				}
+				return price;
+			}
+				
+			first_class=function(weights){
+					price = 0;
+					if (weights > 0 && weights < 5){
+							price = 3.50;
+						}
+					else if (weights > 5 && weights < 9){
+							price = 3.75;
+						}
+					else if (weights > 9 && weights < 10){
+							price = 4.10;
+						}
+					else if (weights > 10 && weights < 11){
+							price = 4.45;
+						}
+					else if (weights > 11 && weights < 12){
+							price = 4.80;
+							}
+					else if (weights > 12 && weights < 13){
+							price = 5.15;
+						}
+					else if (weights > 13 && weights < 14){
+							price = 5.50;
+						}
+					else {
+						price = "";
+					}
+					
+					return price;
+				
+					
+				}
+				
+			
+			
+		%>

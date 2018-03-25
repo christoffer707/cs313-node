@@ -1,0 +1,23 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chris' Blog</title>
+    
+</head>
+<body>
+   <h1 id="Title">A Trucker's Life</h1>
+   
+   <form>
+		<div>
+		<ul>
+         <% results.forEach(function(r) { %>
+			
+			<li><%= r.post_id %> - <%= r.post_date %> - <%= r.post_content%>			
+			</li>
+			<% }); %>
+		</ul>
+		</div>
+   </form>
+</body>
+</html>
